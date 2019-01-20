@@ -42,3 +42,26 @@ module.exports.insertData = (data) => {
         }
     })
 }
+
+module.exports.find = (data) => {
+    return new Promise ((resolve,reject)=>{
+
+        try{
+            data.model.find(data.query,data.excludeFields,data.pagination).then(docs =>{
+                //success
+                resolve({
+                    result:docs,
+                    status:constants.databaseStatus.ENTITY_FETCHED 
+                })
+            }).catch(err=>{
+                reject({
+                    error:err.message,
+                    status:constants.databaseStatus.DATABASE_ERROR
+                })
+            })
+
+        }catch(err){
+            console.log("Something went wrong Crud Repository; Insert Data",err)
+        }
+    })
+}

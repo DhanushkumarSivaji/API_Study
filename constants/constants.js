@@ -16,6 +16,7 @@ module.exports = {
         BAD_REQUEST : 'required fields missing'
     },
     serviceStatus : {
-        USER_CREATED_SUCCESSFULLY : 'user created successfully'
+        USER_CREATED_SUCCESSFULLY : 'user created successfully',
+        USER_LIST_FETCHED_SUCCESSFULLY : 'user list fetched successfully'
     }
 }
